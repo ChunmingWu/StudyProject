@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.adminstrator.guaguakaapplication.WaterFallActivity">
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swiperefreshlayout_water_fall"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:visibility="gone">
-
-    </android.support.v4.widget.SwipeRefreshLayout>
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--下拉刷新用的Header-->
         <RelativeLayout
+            android:id="@+id/rl_header_refresh"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             >
@@ -43,6 +36,23 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp" />
+
+        <!--上拉加载用的Footer-->
+        <RelativeLayout
+            android:id="@+id/rl_footer_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            >
+            <ProgressBar
+                android:id="@+id/progress_loading_dialog2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:indeterminateDrawable="@drawable/loading_anim"
+                android:indeterminateBehavior="repeat"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 

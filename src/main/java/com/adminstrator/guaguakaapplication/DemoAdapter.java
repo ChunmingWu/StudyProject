@@ -20,7 +20,6 @@ import java.util.Random;
 
 public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.BaseViewHolder> {
     private ArrayList<Integer> dataList = new ArrayList<>();
-    private Random random = new Random();
 
     public void replaceAll(ArrayList<Integer> list) {
         dataList.clear();
@@ -30,11 +29,17 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.BaseViewHolder
         notifyDataSetChanged();
     }
 
+    /**
+     * 插入数据使用notifyItemInserted，如果要使用插入动画，必须使用notifyItemInserted
+     * 才会有效果。即便不需要使用插入动画，也建议使用notifyItemInserted方式添加数据，
+     * 不然容易出现闪动和间距错乱的问题
+     * */
     public void addData(int position,ArrayList<Integer> list) {
         dataList.addAll(position,list);
         notifyItemInserted(position);
     }
 
+    //移除数据使用notifyItemRemoved
     public void removeData(int position) {
         dataList.remove(position);
         notifyItemRemoved(position);
@@ -47,8 +52,17 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.BaseViewHolder
     }
 
     @Override
-    public void onBindViewHolder(DemoAdapter.BaseViewHolder holder, int position) {
+    public void onBindViewHolder(DemoAdapter.BaseViewHolder holder, final int position) {
         holder.setData(dataList.get(position),position);
+        if(null != mOnItemClickLitener){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickLitener.onItemClick(null,position);
+                }
+            });
+        }
+
     }
 
 
@@ -74,31 +88,32 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.BaseViewHolder
         public OneViewHolder(View view) {
             super(view);
             ivImage = (ImageView) view.findViewById(R.id.iv_item_water_fall);
- /*           int width = ((Activity) ivImage.getContext()).getWindowManager().getDefaultDisplay().getWidth();
-            ViewGroup.LayoutParams params = ivImage.getLayoutParams();
-            //设置图片的相对于屏幕的宽高比
-            params.width = width/3;
-//            params.height =  (int) (200 + Math.random() * 400) ;
-            params.height = width/3 + (int)random.nextFloat() * width/3;
-            ivImage.setLayoutParams(params);*/
-
         }
 
         @Override
         void setData(Object data,int position) {
             if (data != null) {
                 int id = (int) data;
-//                ivImage.setBackgroundResource(id);
                 ivImage.setImageResource(id);
+                //需要Item高度不同才能出现瀑布流的效果，此处简单粗暴地设置一下高度
                 if (position % 2 == 0) {
-                    ivImage.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300));
+                    ivImage.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 250));
                 } else {
-                    ivImage.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 400));
+                    ivImage.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 350));
                 }
             }
         }
     }
 
+    public interface OnItemClickLitener {
+        void onItemClick(View view, int position);
+    }
+
+    private OnItemClickLitener mOnItemClickLitener;
+
+    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
+        this.mOnItemClickLitener = mOnItemClickLitener;
+    }
 
 }
 
