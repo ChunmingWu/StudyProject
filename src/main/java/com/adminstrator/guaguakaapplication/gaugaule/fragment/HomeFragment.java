@@ -1,5 +1,6 @@
 package com.adminstrator.guaguakaapplication.gaugaule.fragment;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.net.Uri;
@@ -7,8 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +29,7 @@ import com.adminstrator.guaguakaapplication.R;
 import com.adminstrator.guaguakaapplication.Util;
 import com.adminstrator.guaguakaapplication.gaugaule.ExStaggeredGridLayoutManager;
 import com.adminstrator.guaguakaapplication.gaugaule.inter.OnFragmentInteractionListener;
+import com.adminstrator.guaguakaapplication.gaugaule.widget.PopupWin_Scratch_More;
 import com.adminstrator.guaguakaapplication.widget.StaggeredDividerItemDecoration;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -32,18 +37,19 @@ import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  * 刮刮乐首页
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
-
+    private String TAG = getClass().getSimpleName();
     private OnFragmentInteractionListener mListener;
 
     private View view;
     private ImageView iv_grandma_home,iv_bg_banner_home;
-    private TextView tv_banner_home;
-    private RelativeLayout rl_banner_home;
+    private TextView tv_banner_home,tv_exit_home,tv_wallet_amount_home,tv_username_home;
+    private RelativeLayout rl_banner_home,rl_title_home,rl_more_home;
     private SmartRefreshLayout refreshlayout_home;
     private RecyclerView rv_data_list;
     private ArrayList<Integer> imageIds = new ArrayList<>();
@@ -81,9 +87,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         tv_banner_home = view.findViewById(R.id.tv_banner_home);
         rl_banner_home = view.findViewById(R.id.rl_banner_home);
+        rl_title_home = view.findViewById(R.id.rl_title_home);
+        rl_more_home = view.findViewById(R.id.rl_more_home);
+        tv_exit_home = view.findViewById(R.id.tv_exit_home);
+        tv_wallet_amount_home = view.findViewById(R.id.tv_wallet_amount_home);
+        tv_username_home = view.findViewById(R.id.tv_username_home);
 
         refreshlayout_home = view.findViewById(R.id.refreshlayout_home);
-
         rv_data_list = view.findViewById(R.id.rv_data_list);
         rv_data_list.setNestedScrollingEnabled(false);
         rv_data_list.setHasFixedSize(true);
@@ -155,6 +165,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
         rl_banner_home.setOnClickListener(this);
+        rl_more_home.setOnClickListener(this);
+        tv_exit_home.setOnClickListener(this);
     }
 
     private ArrayList<Integer>  getData() {
@@ -172,7 +184,38 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.rl_banner_home:
                 startScaleAnimation();
                 break;
+            case R.id.rl_more_home:
+                showMorePopup();
+                    break;
+            case R.id.tv_exit_home:
+                mListener.onFragmentInteraction(TAG,0);
+                break;
+
         }
+    }
+
+    private FragmentManager manager;
+    private FragmentTransaction transaction;
+    private void showMorePopup() {
+        PopupWin_Scratch_More popupWin_scratch_more = new PopupWin_Scratch_More(getContext(),rl_title_home);
+        popupWin_scratch_more.setOnItemClickLitener(new PopupWin_Scratch_More.OnItemClickLitener() {
+            @Override
+            public void onItemClick(int flag, String message) {
+                if(null == manager){
+                    manager = getActivity().getSupportFragmentManager();
+                }
+                if(flag == 0){
+                    transaction = manager.beginTransaction();
+                    transaction.replace(R.id.fl_scratch_home,MyRecord_ScratchFragment.getInstance(tv_wallet_amount_home.getText().toString(),tv_username_home.getText().toString()));
+                }else if(flag == 1){
+
+                }else if(flag == 2){
+
+                }
+                transaction.addToBackStack(TAG);
+                transaction.commit();
+            }
+        });
     }
 
     private void startScaleAnimation() {

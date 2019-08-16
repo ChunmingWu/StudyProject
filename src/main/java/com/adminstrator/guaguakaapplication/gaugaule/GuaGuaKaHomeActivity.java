@@ -20,6 +20,7 @@ public class GuaGuaKaHomeActivity extends AppCompatActivity implements OnFragmen
     private FragmentManager fragmentManager;
     private FragmentTransaction transaction;
 
+    public static final int ACTION_BACK = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class GuaGuaKaHomeActivity extends AppCompatActivity implements OnFragmen
             homeFragment = new HomeFragment();
             fragmentManager = getSupportFragmentManager();
             transaction = fragmentManager.beginTransaction();
-            transaction.replace(R.id.rl_home,homeFragment);
+            transaction.replace(R.id.fl_scratch_home,homeFragment);
             transaction.commit();
         }
 
@@ -43,7 +44,9 @@ public class GuaGuaKaHomeActivity extends AppCompatActivity implements OnFragmen
 
 
     @Override
-    public void onFragmentInteraction(int fromFlag, int actionFlag) {
-
+    public void onFragmentInteraction(String from, int actionFlag) {
+        if(actionFlag == ACTION_BACK){
+            onBackPressed();
+        }
     }
 }

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    >
+
+    <ImageView
+        android:id="@+id/iv_pay_rv_scratch"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:scaleType="fitCenter"
+        android:layout_centerVertical="true"
+        android:src="@drawable/p6"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="10dp"
+        />
+    <LinearLayout
+        android:layout_toRightOf="@+id/iv_pay_rv_scratch"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/tv_goods_name_pay_rv_scratch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:gravity="left|center_vertical"
+            android:text="Dare Or Not"
+            />
+        <TextView
+            android:id="@+id/tv_order_id_pay_rv_scratch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:gravity="left|center_vertical"
+            android:text="订单号：SD1FDSFS21C66SF"
+            android:layout_marginTop="5dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_time_pay_rv_scratch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGray_91"
+                android:textSize="13sp"
+                android:gravity="left|center_vertical"
+                android:text="14:52:33 2019/04/15"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:id="@+id/tv_amount_pay_rv_scratch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:gravity="left|center_vertical"
+                android:text="KHR 12,000"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15sp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_toRightOf="@+id/iv_pay_rv_scratch"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorGray_e"
+        />
+
+</RelativeLayout>

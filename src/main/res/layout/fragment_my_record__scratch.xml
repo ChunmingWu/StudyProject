@@ -1,0 +1,144 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray_f2"
+    android:orientation="vertical"
+    tools:context="com.adminstrator.guaguakaapplication.gaugaule.fragment.MyRecord_ScratchFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--标题-->
+        <RelativeLayout
+            android:id="@+id/rl_title_my_record"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/colorRed_scratch"
+            android:paddingLeft="10dp">
+
+
+            <ImageView
+                android:id="@+id/iv_head_my_record"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/p6" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/iv_head_my_record"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_username_my_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|bottom"
+                    android:text="昵称"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_wallet_amount_my_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|top"
+                    android:text="KHR 120,021"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_exit_my_record"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="退出"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_below="@+id/rl_title_my_record"
+            android:background="@color/colorRed_scratch" />
+
+        <!--tab-->
+        <LinearLayout
+            android:layout_width="339dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/shape_btn_white"
+            android:orientation="horizontal">
+
+            <com.adminstrator.guaguakaapplication.gaugaule.widget.TextDrawable
+                android:id="@+id/tv_pay_my_record"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:text="支出"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                app:bottomDrawable="@drawable/shape_red_bar_scratch"
+                app:bottomDrawableHeight="2dp"
+                app:bottomDrawableWidth="90dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/colorGray_ec" />
+
+            <com.adminstrator.guaguakaapplication.gaugaule.widget.TextDrawable
+                android:id="@+id/tv_win_my_record"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawablePadding="3dp"
+                android:gravity="center"
+                android:text="收入"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                app:bottomDrawable="@drawable/shape_red_bar_scratch"
+                app:bottomDrawableHeight="2dp"
+                app:bottomDrawableWidth="90dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--列表-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_pay_my_record"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="10dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_win_my_record"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -9,5 +9,5 @@ public interface OnFragmentInteractionListener {
      * fromFlag 从哪个页面来的
      * actionFlag 要做什么操作
      * */
-    void onFragmentInteraction(int fromFlag,int actionFlag);
+    void onFragmentInteraction(String from,int actionFlag);
 }
