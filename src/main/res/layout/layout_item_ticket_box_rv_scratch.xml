@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <ImageView
+        android:id="@+id/iv_ticket_box_rv_scratch"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/p6" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iv_ticket_box_rv_scratch"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_goods_name_ticket_box_rv_scratch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="left|center_vertical"
+            android:singleLine="true"
+            android:text="Dare Or Not"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_order_id_ticket_box_rv_scratch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="订单号：SD1FDSFS21C66SF"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/tv_progress_ticket_box_rv_scratch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="刮奖进度：KHR 4,000/1,000"
+            android:textColor="@color/colorRed_509"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/tv_time_ticket_box_rv_scratch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="14:52:33 2019/04/15"
+            android:textColor="@color/colorGray_91"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -15,7 +15,7 @@
         android:layout_marginLeft="7dp"
         android:layout_marginRight="10dp"
         />
-    <LinearLayout
+    <RelativeLayout
         android:layout_toRightOf="@+id/iv_pay_rv_scratch"
         android:layout_width="match_parent"
         android:layout_height="73dp"
@@ -31,6 +31,22 @@
             android:textSize="15sp"
             android:gravity="left|center_vertical"
             android:text="Dare Or Not"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/tv_status_pay_rv_scratch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorRed_c65"
+            android:textSize="18sp"
+            android:gravity="left|top"
+            android:text="Get"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15sp"
             />
         <TextView
             android:id="@+id/tv_order_id_pay_rv_scratch"
@@ -41,6 +57,8 @@
             android:gravity="left|center_vertical"
             android:text="订单号：SD1FDSFS21C66SF"
             android:layout_marginTop="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_goods_name_pay_rv_scratch"
             />
 
         <RelativeLayout
@@ -48,6 +66,8 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:layout_marginTop="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_order_id_pay_rv_scratch"
             >
             <TextView
                 android:id="@+id/tv_time_pay_rv_scratch"
@@ -75,7 +95,7 @@
 
         </RelativeLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"

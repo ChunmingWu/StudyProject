@@ -30,6 +30,7 @@ import com.adminstrator.guaguakaapplication.Util;
 import com.adminstrator.guaguakaapplication.gaugaule.ExStaggeredGridLayoutManager;
 import com.adminstrator.guaguakaapplication.gaugaule.inter.OnFragmentInteractionListener;
 import com.adminstrator.guaguakaapplication.gaugaule.widget.PopupWin_Scratch_More;
+import com.adminstrator.guaguakaapplication.gaugaule.widget.SettingsDialog;
 import com.adminstrator.guaguakaapplication.widget.StaggeredDividerItemDecoration;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -197,23 +198,38 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private FragmentManager manager;
     private FragmentTransaction transaction;
     private void showMorePopup() {
+        if(null == manager){
+            manager = getActivity().getSupportFragmentManager();
+        }
         PopupWin_Scratch_More popupWin_scratch_more = new PopupWin_Scratch_More(getContext(),rl_title_home);
         popupWin_scratch_more.setOnItemClickLitener(new PopupWin_Scratch_More.OnItemClickLitener() {
             @Override
             public void onItemClick(int flag, String message) {
-                if(null == manager){
-                    manager = getActivity().getSupportFragmentManager();
-                }
                 if(flag == 0){
                     transaction = manager.beginTransaction();
-                    transaction.replace(R.id.fl_scratch_home,MyRecord_ScratchFragment.getInstance(tv_wallet_amount_home.getText().toString(),tv_username_home.getText().toString()));
+                    transaction.replace(R.id.fl_scratch_home,MyRecord_ScratchFragment.newInstance(tv_wallet_amount_home.getText().toString(),tv_username_home.getText().toString()));
+                    transaction.addToBackStack(TAG);
+                    transaction.commit();
                 }else if(flag == 1){
-
+                    transaction = manager.beginTransaction();
+                    transaction.replace(R.id.fl_scratch_home,TicketBoxFragment.newInstance(tv_wallet_amount_home.getText().toString(),tv_username_home.getText().toString()));
+                    transaction.addToBackStack(TAG);
+                    transaction.commit();
                 }else if(flag == 2){
+                    SettingsDialog settingsDialog = new SettingsDialog(getContext());
+                    settingsDialog.setOnCheckListener(new SettingsDialog.OnCheckListener() {
+                        @Override
+                        public void onCheck(int flag, boolean checked) {
+                            if(flag == SettingsDialog.FLAG_MUSIC){
 
+                            }else if(flag == SettingsDialog.FLAG_VOICE){
+
+                            }
+                        }
+                    });
+                    settingsDialog.show(getActivity().getSupportFragmentManager(),null);
                 }
-                transaction.addToBackStack(TAG);
-                transaction.commit();
+
             }
         });
     }

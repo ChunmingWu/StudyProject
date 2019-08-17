@@ -6,6 +6,7 @@
     <color name="colorRed_scratch">#F44C31</color>
     <color name="colorWhite">#FFF</color>
     <color name="colorBlack">#000</color>
+    <color name="colorBlack_33">#333333</color>
     <color name="colorRed">#C81623</color>
     <color name="colorRed_Splash">#C10404</color>
     <color name="colorBlue">#4A90E2</color>
@@ -14,6 +15,8 @@
     <color name="colorDarkRed">#8B0000</color>
     <color name="colorRed_1722">#C81722</color>
     <color name="colorRed_1622">#C81622</color>
+    <color name="colorRed_c65">#CC6655</color>
+    <color name="colorRed_509">#FB4509</color>
     <color name="colorSmallGray">#CCC</color>
     <color name="colorGray_7e">#7E7E7E</color>
     <color name="colorGray_7e_60">#667E7E7E</color>
@@ -36,6 +39,7 @@
     <color name="colorGray_91">#919191</color>
     <color name="colorGray_e">#EEEEEE</color>
     <color name="colorGray_d5">#D5D5D5</color>
+    <color name="colorGray_c9">#C9C9C9</color>
     <color name="colorDark_32">#323232</color>
     <color name="color_progress_level">#F3D530</color>
     <color name="color_share_rect_point">#F5A623</color>

@@ -38,12 +38,12 @@ public class MyRecord_ScratchFragment extends Fragment implements View.OnClickLi
     private TextView tv_username_my_record, tv_wallet_amount_my_record, tv_exit_my_record;
     private TextDrawable tv_pay_my_record, tv_win_my_record;
     private RecyclerView rv_pay_my_record, rv_win_my_record;
-    private PayRVAdapter_Scratch payRVAdapter_scratch;
+    private PayRVAdapter_Scratch payRVAdapter_scratch,winRVAdapter_scratch;
 
     public MyRecord_ScratchFragment() {
     }
 
-    public static MyRecord_ScratchFragment getInstance(String amount, String username) {
+    public static MyRecord_ScratchFragment newInstance(String amount, String username) {
         MyRecord_ScratchFragment fragment = new MyRecord_ScratchFragment();
         Bundle bundle = new Bundle();
         bundle.putString(PARAM_AMOUNT, amount);
@@ -89,8 +89,11 @@ public class MyRecord_ScratchFragment extends Fragment implements View.OnClickLi
         for (int i = 0; i < 5; i++) {
             datas.add(i + "");
         }
-        payRVAdapter_scratch = new PayRVAdapter_Scratch(getContext(), datas);
+        payRVAdapter_scratch = new PayRVAdapter_Scratch(getContext(), datas,PayRVAdapter_Scratch.FLAG_PAY);
         rv_pay_my_record.setAdapter(payRVAdapter_scratch);
+
+        winRVAdapter_scratch = new PayRVAdapter_Scratch(getContext(),datas,PayRVAdapter_Scratch.FLAG_WIN);
+        rv_win_my_record.setAdapter(winRVAdapter_scratch);
 
         tv_exit_my_record.setOnClickListener(this);
         tv_pay_my_record.setOnClickListener(this);
