@@ -30,6 +30,7 @@ import com.adminstrator.guaguakaapplication.Util;
 import com.adminstrator.guaguakaapplication.gaugaule.ExStaggeredGridLayoutManager;
 import com.adminstrator.guaguakaapplication.gaugaule.inter.OnFragmentInteractionListener;
 import com.adminstrator.guaguakaapplication.gaugaule.widget.PopupWin_Scratch_More;
+import com.adminstrator.guaguakaapplication.gaugaule.widget.PrizesDialog;
 import com.adminstrator.guaguakaapplication.gaugaule.widget.SettingsDialog;
 import com.adminstrator.guaguakaapplication.widget.StaggeredDividerItemDecoration;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -129,6 +130,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(getContext(),"click position:" + position,Toast.LENGTH_SHORT).show();
+                PrizesDialog  prizesDialog = new PrizesDialog(getContext());
+                prizesDialog.show(getActivity().getSupportFragmentManager(),null);
             }
         });
 

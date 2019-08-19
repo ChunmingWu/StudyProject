@@ -5,10 +5,12 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorRed_scratch">#F44C31</color>
     <color name="colorWhite">#FFF</color>
+    <color name="colorWhite_FE">#FEFEFE</color>
     <color name="colorBlack">#000</color>
     <color name="colorBlack_33">#333333</color>
     <color name="colorRed">#C81623</color>
     <color name="colorRed_Splash">#C10404</color>
+    <color name="colorRed_900">#990000</color>
     <color name="colorBlue">#4A90E2</color>
     <color name="colorRed_little_horizon">#A00201</color>
     <color name="colorRed_send_code_bg">#4CC81623</color>
