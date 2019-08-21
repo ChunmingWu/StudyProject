@@ -24,4 +24,11 @@
         <attr name="bottomDrawableHeight" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="GuaGuaKaView">
+        <attr name="coinWidth" format="dimension"/>
+        <attr name="coinHeight" format="dimension"/>
+        <attr name="layerDrawable" format="reference" />
+        <attr name="coinDrawable" format="reference" />
+    </declare-styleable>
+
 </resources>

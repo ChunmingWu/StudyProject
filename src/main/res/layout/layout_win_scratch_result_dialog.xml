@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/ll_settings_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="126.66%w"
+        android:background="@drawable/bg_scratch_result_win"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_cha_lost_scratch_result_dialog"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_marginTopPercent="17.68%"
+            app:layout_marginRightPercent="14.1%"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/icon_cha" />
+
+        <TextView
+            android:id="@+id/tv_title_lost_scratch_result_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:layout_marginTopPercent="29%"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="恭喜您!!"
+            android:textColor="#FFFFCC"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tv_peize_level_win_scratch_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginTopPercent="46.6%"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="获得二等奖"
+            android:textStyle="bold"
+            android:textColor="#FE0404"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tv_amount_win_scratch_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginTopPercent="61.1%"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="2,000"
+            android:textColor="#FF0101"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_khr_win_scratch_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginTopPercent="70%"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="KHR"
+            android:textColor="#FF0101"
+            android:textSize="14sp" />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

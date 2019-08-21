@@ -1,28 +1,32 @@
-package com.adminstrator.guaguakaapplication.widget;
+package com.adminstrator.guaguakaapplication.gaugaule.widget;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.adminstrator.guaguakaapplication.R;
+import com.adminstrator.guaguakaapplication.Util;
 
 /**
  * Created by Administrator on 2019/7/26.
  * 刮刮卡的蒙层View
  */
 
-public class GuaGuaKaLayer extends View {
+public class GuaGuaKaView extends View {
     /**
      * 绘制线条的Paint,即用户手指绘制Path
      */
@@ -45,57 +49,73 @@ public class GuaGuaKaLayer extends View {
 
     /**
      * 蒙层和橡皮擦
-     * */
+     */
     private Bitmap mBackBitmap;
     private Bitmap moveBitmap;
 
     /**
      * 记录手势移动位置
-     * */
+     */
     private int mLastX;
     private int mLastY;
 
     /**
      * 用于判断何时算刮开完成
-     * */
+     */
     private boolean isComplete = false;
 
     /**
      * 用于判断是否显示橡皮擦
-     * */
+     */
     private boolean isDownOrMove = false;
 
     private Resources resources;
 
-    public GuaGuaKaLayer(Context context) {
+    private int layerWidth, layerHeight;
+    private int coinWidth, coinHeight;
+    private Drawable layerDrawable, coinDrawable;
+
+    public GuaGuaKaView(Context context) {
         this(context, null);
     }
 
-    public GuaGuaKaLayer(Context context, @Nullable AttributeSet attrs) {
+    public GuaGuaKaView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public GuaGuaKaLayer(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public GuaGuaKaView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         resources = context.getResources();
-        init();
+        init(context, attrs);
     }
 
 
-    private void init() {
+    private void init(Context context, AttributeSet attrs) {
         mPath = new Path();
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.GuaGuaKaView);
+        layerDrawable = typedArray.getDrawable(R.styleable.GuaGuaKaView_layerDrawable);
+
+        coinWidth = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinWidth, Util.dp2px(context, 40));
+        coinHeight = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinHeight, Util.dp2px(context, 40));
+        coinDrawable = typedArray.getDrawable(R.styleable.GuaGuaKaView_coinDrawable);
     }
 
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
         int width = getMeasuredWidth();
         int height = getMeasuredHeight();
+        if (width != 0) {
+            layerWidth = getMeasuredWidth();
+        }
+        if (height != 0) {
+            layerHeight = getMeasuredHeight();
+        }
+
 
         //初始化bitmap
-        mBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        mBitmap = Bitmap.createBitmap(layerWidth, layerHeight, Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
 
         //设置画笔
@@ -108,13 +128,29 @@ public class GuaGuaKaLayer extends View {
         //设置画笔宽度
         mOutterPaint.setStrokeWidth(20);
 
-        //将Bitmap精确缩放到指定的大小
-        Bitmap tempBackBitmap = Bitmap.createBitmap(BitmapFactory.decodeResource(resources, R.drawable.guaguaceng));
-        Bitmap tempMoveBitmap = Bitmap.createBitmap(BitmapFactory.decodeResource(resources, R.drawable.cleaner));
-        moveBitmap = Bitmap.createScaledBitmap(tempMoveBitmap,100,100,true);
-        mBackBitmap= Bitmap.createScaledBitmap(tempBackBitmap, width, height, true);
+        if(null == coinDrawable){
+            moveBitmap = Bitmap.createScaledBitmap(Bitmap.createBitmap(BitmapFactory.decodeResource(resources, R.drawable.cleaner)),coinWidth,coinHeight,true);
+        }else{
+            moveBitmap = drawableToBitmap(coinDrawable, coinWidth, coinHeight);
+        }
+        mBackBitmap = drawableToBitmap(layerDrawable, layerWidth, layerHeight);
 
         mCanvas.drawBitmap(mBackBitmap, 0, 0, null);
+    }
+
+    public static Bitmap drawableToBitmap(Drawable drawable, int width, int height) {
+        if (null == drawable || 0 == width || 0 == height) {
+            return null;
+        }
+        Bitmap bitmap = Bitmap.createBitmap(
+                width, height,
+                drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
+                        : Bitmap.Config.RGB_565);
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, width, height);
+        drawable.draw(canvas);
+        return bitmap;
+
     }
 
     @Override
@@ -122,16 +158,16 @@ public class GuaGuaKaLayer extends View {
         if (!isComplete) {
             drawPath();
             canvas.drawBitmap(mBitmap, 0, 0, null);
-            if(isDownOrMove){
+            if (isDownOrMove) {
                 //绘制橡皮擦
-                canvas.drawBitmap(moveBitmap, mLastX - moveBitmap.getWidth()/2, mLastY - moveBitmap.getHeight()/2, null);
+                canvas.drawBitmap(moveBitmap, mLastX - moveBitmap.getWidth() / 2, mLastY - moveBitmap.getHeight() / 2, null);
             }
         }
     }
 
     /**
      * 绘制线条
-     * */
+     */
     private void drawPath() {
         mOutterPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
 //        mOutterPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
@@ -182,8 +218,8 @@ public class GuaGuaKaLayer extends View {
         @Override
         public void run() {
 
-            int w = getWidth();
-            int h = getHeight();
+            int w = layerWidth;
+            int h = layerHeight;
 
             float wipeArea = 0;
             float totalArea = w * h;
@@ -226,8 +262,24 @@ public class GuaGuaKaLayer extends View {
     };
 
 
-    public void clearAll(){
+    public void clearAll() {
         isComplete = true;
         postInvalidate();
+    }
+
+    public void setLayer(Drawable drawable, int width, int height) {
+        this.layerDrawable = drawable;
+        this.layerWidth = width;
+        this.layerHeight = height;
+        measure(width, height);
+        invalidate();
+    }
+
+    public void setCoin(Drawable drawable, int width, int height) {
+        this.coinDrawable = drawable;
+        this.coinWidth = width;
+        this.coinHeight = height;
+        moveBitmap = drawableToBitmap(coinDrawable, coinWidth, coinHeight);
+        invalidate();
     }
 }

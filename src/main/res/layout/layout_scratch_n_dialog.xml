@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_scratch_n_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/rl_main_scratch_n_dialog"
+        android:layout_width="0dp"
+        app:layout_widthPercent="91%"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_alignParentLeft="true"
+        app:layout_marginLeftPercent="1.86%"
+        android:background="@drawable/bg_scratch_n_dialog"
+        >
+
+        <ImageView
+            android:id="@+id/iv_cha_scratch_n_dialog"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_marginTopPercent="21.2%"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="14dp"
+            android:background="@drawable/icon_cha_little" />
+
+        <TextView
+            android:id="@+id/tv_title_scratch_n_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:layout_marginLeftPercent="6.17%"
+            app:layout_marginTopPercent="21.7%"
+            android:gravity="center"
+            android:text="Scratch 10"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_description_scratch_n_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_marginLeftPercent="6.17%"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            app:layout_marginTopPercent="5.85%"
+            app:layout_marginBottomPercent="2%"
+            android:layout_below="@+id/tv_title_scratch_n_dialog"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="1dp"
+                android:background="#FFF230"
+                />
+
+            <TextView
+                android:id="@+id/tv_description_scratch_n_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:gravity="center"
+                android:text="Scratch 10 contains 10 scratch tickets"
+                android:textColor="#FFF230"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="1dp"
+                android:background="#FFF230"
+                />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_scratch_n_dialog"
+            android:layout_below="@+id/ll_description_scratch_n_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="321dp"
+            app:layout_marginLeftPercent="16%"
+            app:layout_marginRightPercent="4%"
+            android:layout_marginBottom="2dp"
+            />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:id="@+id/ll_amount_scratch_n_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="21dp"
+        app:layout_marginBottomPercent="7%"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/rl_main_scratch_n_dialog"
+        android:background="@drawable/btn_scratch_n_dialog"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_buy_festival_gift_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|bottom"
+            android:text="KHR 4,000"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_old_price_buy_scratch_n_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/tv_old_price_buy_scratch_n_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="KHR 2,000"
+                android:textColor="#FFCFBF"
+                android:layout_centerVertical="true"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignLeft="@+id/tv_old_price_buy_scratch_n_dialog"
+                android:layout_alignRight="@+id/tv_old_price_buy_scratch_n_dialog"
+                android:layout_centerVertical="true"
+                android:background="#FFCFBF" />
+        </RelativeLayout>
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+
+
+
+</com.zhy.android.percent.support.PercentLinearLayout>

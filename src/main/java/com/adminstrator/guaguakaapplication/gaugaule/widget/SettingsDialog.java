@@ -44,7 +44,7 @@ public class SettingsDialog extends DialogFragment {
         View view = inflater.inflate(R.layout.layout_settings_dialog,container);
         CheckBox cb_music_settings_dialog = view.findViewById(R.id.cb_music_settings_dialog);
         CheckBox cb_voice_settings_dialog = view.findViewById(R.id.cb_voice_settings_dialog);
-        ImageView iv_cha_settings_dialog = view.findViewById(R.id.iv_cha_settings_dialog);
+        ImageView iv_cha_settings_dialog = view.findViewById(R.id.iv_cha_lost_scratch_result_dialog);
 
         cb_music_settings_dialog.setChecked(SaveScratchVoiceStatus.getMusicStatus(mContext));
         cb_voice_settings_dialog.setChecked(SaveScratchVoiceStatus.getVoiceStatus(mContext));

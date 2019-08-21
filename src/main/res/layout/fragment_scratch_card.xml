@@ -1,0 +1,128 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorGray_f2"
+    tools:context="com.adminstrator.guaguakaapplication.gaugaule.fragment.TicketBoxFragment">
+
+    <!--标题-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorRed_scratch"
+        android:paddingLeft="10dp">
+
+
+        <ImageView
+            android:id="@+id/iv_head_scratch_card"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/p6" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_head_scratch_card"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_username_scratch_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|bottom"
+                android:text="昵称"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_wallet_amount_scratch_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|top"
+                android:text="KHR 120,021"
+                android:textColor="@color/colorWhite"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_exit_scratch_card"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="退出"
+            android:textColor="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_scratch_card"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F91D1D"
+        >
+      <!--  <TextView
+            android:id="@+id/tv_bottom_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/p1"
+            android:layout_centerInParent="true"
+            />
+
+        <com.adminstrator.guaguakaapplication.gaugaule.widget.GuaGuaKaView
+            android:id="@+id/guaguakaview_scratch_card"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layerDrawable="@drawable/p9"
+            android:layout_centerInParent="true"
+            />-->
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp">
+
+        <com.adminstrator.guaguakaapplication.gaugaule.widget.TextDrawable
+            android:id="@+id/tv_description_scratch_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#010101"
+            android:textSize="9dp"
+            android:text="说明"
+            android:gravity="center"
+            app:topDrawable="@drawable/icon_alert"
+            app:topDrawableHeight="21dp"
+            app:topDrawableWidth="21dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_claim_payout_scratch_card"
+            android:layout_width="232dp"
+            android:layout_height="48dp"
+            android:background="@drawable/laylist_buy_scratch_dialog"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:text="兑换"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

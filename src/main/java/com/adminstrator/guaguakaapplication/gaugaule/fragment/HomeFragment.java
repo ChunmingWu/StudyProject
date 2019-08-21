@@ -29,8 +29,10 @@ import com.adminstrator.guaguakaapplication.R;
 import com.adminstrator.guaguakaapplication.Util;
 import com.adminstrator.guaguakaapplication.gaugaule.ExStaggeredGridLayoutManager;
 import com.adminstrator.guaguakaapplication.gaugaule.inter.OnFragmentInteractionListener;
+import com.adminstrator.guaguakaapplication.gaugaule.widget.FestivalGiftDialog;
 import com.adminstrator.guaguakaapplication.gaugaule.widget.PopupWin_Scratch_More;
 import com.adminstrator.guaguakaapplication.gaugaule.widget.PrizesDialog;
+import com.adminstrator.guaguakaapplication.gaugaule.widget.ScratchNDialog;
 import com.adminstrator.guaguakaapplication.gaugaule.widget.SettingsDialog;
 import com.adminstrator.guaguakaapplication.widget.StaggeredDividerItemDecoration;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -59,6 +61,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             R.drawable.p8,R.drawable.p9,R.drawable.p10,R.drawable.p11,R.drawable.p12,R.drawable.p13,R.drawable.p6,};
     private DemoAdapter adapter;
 
+    private FragmentManager manager;
+    private FragmentTransaction transaction;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -130,8 +134,29 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(getContext(),"click position:" + position,Toast.LENGTH_SHORT).show();
-                PrizesDialog  prizesDialog = new PrizesDialog(getContext());
-                prizesDialog.show(getActivity().getSupportFragmentManager(),null);
+                if(position % 3 == 0){
+                    PrizesDialog  prizesDialog = new PrizesDialog(getContext(),PrizesDialog.FLAG_BUY);
+                    prizesDialog.show(getActivity().getSupportFragmentManager(),null);
+                }else if(position % 3 == 1){
+                    FestivalGiftDialog festivalGiftDialog = new FestivalGiftDialog(getContext(),position);
+                    festivalGiftDialog.show(getActivity().getSupportFragmentManager(),null);
+                    festivalGiftDialog.setOnBuyClickListener(new FestivalGiftDialog.OnBuyClickListener() {
+                        @Override
+                        public void onClick(int position) {
+                                goToScratchCard();
+                        }
+                    });
+                }else if(position % 3 == 2){
+                    ScratchNDialog scratchNDialog = new ScratchNDialog(getContext(),position);
+                    scratchNDialog.show(getActivity().getSupportFragmentManager(),null);
+                    scratchNDialog.setOnBuyClickListener(new ScratchNDialog.OnBuyClickListener() {
+                        @Override
+                        public void onClick(int position) {
+                            goToScratchCard();
+                        }
+                    });
+                }
+
             }
         });
 
@@ -173,6 +198,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         tv_exit_home.setOnClickListener(this);
     }
 
+    private void goToScratchCard() {
+        if(null == manager){
+            manager = getActivity().getSupportFragmentManager();
+        }
+        transaction = manager.beginTransaction();
+        transaction.replace(R.id.fl_scratch_home,ScratchCardFragment.newInstance(tv_wallet_amount_home.getText().toString(),tv_username_home.getText().toString()));
+        transaction.addToBackStack(TAG);
+        transaction.commit();
+    }
+
     private ArrayList<Integer>  getData() {
         ArrayList<Integer> list = new ArrayList<>();
         for(int i = 0 ; i < 6;i++){
@@ -198,8 +233,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private FragmentManager manager;
-    private FragmentTransaction transaction;
+
     private void showMorePopup() {
         if(null == manager){
             manager = getActivity().getSupportFragmentManager();

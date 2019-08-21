@@ -9,14 +9,14 @@
         android:id="@+id/ll_settings_dialog"
         android:layout_width="275dp"
         android:layout_height="252dp"
-        android:layout_below="@+id/iv_cha_settings_dialog"
+        android:layout_below="@+id/iv_cha_lost_scratch_result_dialog"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:background="@drawable/shape_settings_dialog_white"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/iv_bg_settings_settings_dialog"
+            android:id="@+id/iv_cha_scratch_n_dialog"
             android:layout_width="match_parent"
             android:layout_height="109dp"
             android:background="@drawable/bg_settings_scratch" />
@@ -37,7 +37,7 @@
             android:id="@+id/rl_music_settings_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_bg_settings_settings_dialog"
+            android:layout_below="@+id/iv_cha_scratch_n_dialog"
             android:layout_marginLeft="27dp"
             android:layout_marginRight="21dp"
             android:layout_marginTop="42dp">
@@ -98,7 +98,7 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/iv_cha_settings_dialog"
+        android:id="@+id/iv_cha_lost_scratch_result_dialog"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_alignParentTop="true"

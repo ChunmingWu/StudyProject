@@ -18,7 +18,9 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+/**
+ * 使用Px设置宽高，并做缩放
+ * */
 public class PxActivity extends AppCompatActivity {
     private EditText edt_width, edt_height, edt_left, edt_top;
     private Button btn_confirm;

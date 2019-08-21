@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -40,9 +39,13 @@ public class PrizesDialog extends DialogFragment {
     private PackageRVAdapter_Scratch_Prizes_Dialog adapter_scratch_prizes_dialog;
     private List<ScratchPrizesDialogPackageBean> datas;
 
+    public static final int FLAG_BUY = 0,FLAG_DESCRIPTION = 1;
+    private int flag;
+
     @SuppressLint("ValidFragment")
-    public PrizesDialog(Context mContext) {
+    public PrizesDialog(Context mContext,int flag) {
         this.mContext = mContext;
+        this.flag = flag;
     }
 
     @Override
@@ -56,7 +59,7 @@ public class PrizesDialog extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         View view = inflater.inflate(R.layout.layout_prizes_dialog, container);
-        ImageView iv_cha_settings_dialog = view.findViewById(R.id.iv_cha_settings_dialog);
+        ImageView iv_cha_settings_dialog = view.findViewById(R.id.iv_cha_lost_scratch_result_dialog);
         LinearLayout ll_left_prizes_description = view.findViewById(R.id.ll_left_prizes_description);
         LinearLayout ll_right_prizes_description = view.findViewById(R.id.ll_right_prizes_description);
         TextView tv_rules_prizes_Dialog = view.findViewById(R.id.tv_rules_prizes_Dialog);
@@ -66,6 +69,14 @@ public class PrizesDialog extends DialogFragment {
         TextView tv_buy_prizes_dialog = view.findViewById(R.id.tv_buy_prizes_dialog);
         RelativeLayout rl_old_price_buy_prizes_dialog = view.findViewById(R.id.rl_old_price_buy_prizes_dialog);
         TextView tv_old_price_buy_prizes_dialog = view.findViewById(R.id.tv_old_price_buy_prizes_dialog);
+
+        if(flag == FLAG_BUY){
+            ry_package_prizes_dialog.setVisibility(View.VISIBLE);
+            ll_amount_prizes_dialog.setVisibility(View.VISIBLE);
+        }else if(flag == FLAG_DESCRIPTION){
+            ry_package_prizes_dialog.setVisibility(View.GONE);
+            ll_amount_prizes_dialog.setVisibility(View.GONE);
+        }
 
         tv_rules_prizes_Dialog.setText("1.分为奖池区与游戏区两部分\n" +
                 "2.游戏区的刮开不会影响奖池区中奖兑奖\n" +

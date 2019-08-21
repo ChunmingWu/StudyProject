@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_scratch_n_rv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_rv_scratch_n"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:orientation="horizontal"
+            app:layout_widthPercent="41.1%"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="KHR "
+                android:textColor="@color/colorRed_scratch"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_amount_scratch_n_rv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="2,000"
+                android:textColor="@color/colorRed_scratch"
+                android:textSize="15sp"
+           />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="7dp"
+            android:layout_marginTop="7dp"
+            android:background="#DEDEDE" />
+
+        <TextView
+            android:id="@+id/tv_name_scratch_n_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="5dp"
+            android:text="Boxing"
+            android:textColor="@color/colorBlack_32"
+            android:textSize="15sp" />
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <TextView
+        android:id="@+id/tv_number_scratch_n_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="× 1"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp" />
+
+</com.zhy.android.percent.support.PercentLinearLayout>

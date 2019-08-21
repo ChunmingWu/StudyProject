@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/ll_settings_dialog"
+        android:layout_width="316dp"
+        android:layout_height="338dp"
+        android:background="@drawable/bg_scratch_result_lost"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="您这次没有中奖请继续努力"
+            android:layout_marginLeft="69dp"
+            android:layout_marginRight="69dp"
+            android:textStyle="bold"
+            android:textColor="#00A4DE"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tv_buy_one_lost_scratch_result_dialog"
+            android:layout_width="185dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="271dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="再买一张"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_cha_lost_scratch_result_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="23dp"
+        >
+        <ImageView
+            android:id="@+id/iv_cha_lost_scratch_result_dialog"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/icon_cha" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_title_lost_scratch_result_dialog"
+        android:layout_below="@+id/rl_cha_lost_scratch_result_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="真遗憾！"
+        android:textColor="#4C8FFE"
+        android:textSize="36sp" />
+
+</com.zhy.android.percent.support.PercentRelativeLayout>
