@@ -95,8 +95,8 @@ public class GuaGuaKaView extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.GuaGuaKaView);
         layerDrawable = typedArray.getDrawable(R.styleable.GuaGuaKaView_layerDrawable);
 
-        coinWidth = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinWidth, Util.dp2px(context, 40));
-        coinHeight = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinHeight, Util.dp2px(context, 40));
+        coinWidth = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinWidth, Util.dp2px(context, 148));
+        coinHeight = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinHeight, Util.dp2px(context, 129));
         coinDrawable = typedArray.getDrawable(R.styleable.GuaGuaKaView_coinDrawable);
     }
 
@@ -160,7 +160,8 @@ public class GuaGuaKaView extends View {
             canvas.drawBitmap(mBitmap, 0, 0, null);
             if (isDownOrMove) {
                 //绘制橡皮擦
-                canvas.drawBitmap(moveBitmap, mLastX - moveBitmap.getWidth() / 2, mLastY - moveBitmap.getHeight() / 2, null);
+//                canvas.drawBitmap(moveBitmap, mLastX - moveBitmap.getWidth() / 2, mLastY - moveBitmap.getHeight() / 2, null);
+                canvas.drawBitmap(moveBitmap, mLastX - moveBitmap.getWidth() * 3 / 4 , mLastY- moveBitmap.getHeight() * 1/ 4, null);
             }
         }
     }

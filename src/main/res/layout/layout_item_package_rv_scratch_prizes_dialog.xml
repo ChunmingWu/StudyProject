@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_package_scratch_dialog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/laylist_package_scratch_dialog"
+    android:background="@drawable/bg_normal_package_scratch_dialog"
     >
 
     <TextView
@@ -26,7 +27,7 @@
         android:textColor="@color/colorBlack_33"
         android:textSize="10sp"
         />
-    <TextView
+   <!-- <TextView
         android:id="@+id/tv_selected_rv_prizes_dialog"
         android:layout_width="11dp"
         android:layout_height="11dp"
@@ -35,5 +36,5 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="3dp"
         />
-
+-->
 </RelativeLayout>

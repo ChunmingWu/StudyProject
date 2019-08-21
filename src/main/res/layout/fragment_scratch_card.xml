@@ -93,7 +93,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="76dp">
+        android:layout_height="76dp"
+        android:background="@drawable/bg_bottom_scratch_card"
+        >
 
         <com.adminstrator.guaguakaapplication.gaugaule.widget.TextDrawable
             android:id="@+id/tv_description_scratch_card"

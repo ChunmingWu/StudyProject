@@ -34,7 +34,7 @@ import java.util.List;
 @SuppressLint("ValidFragment")
 public class PrizesDialog extends DialogFragment {
     private Context mContext;
-    private boolean isHasPackage = false;
+    private boolean isHasPackage = true;
     private RecyclerView ry_package_prizes_dialog;
     private PackageRVAdapter_Scratch_Prizes_Dialog adapter_scratch_prizes_dialog;
     private List<ScratchPrizesDialogPackageBean> datas;

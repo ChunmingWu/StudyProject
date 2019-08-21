@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.adminstrator.guaguakaapplication.R;
@@ -42,11 +43,11 @@ public class PackageRVAdapter_Scratch_Prizes_Dialog extends RecyclerView.Adapter
         holder.tv_number_rv_prizes_dialog.setText("buy " + bean.getBuyNumber() + " free " + bean.getFreeNumber());
         holder.tv_amount_rv_prizes_dialog.setText("KHR " + Util.qianweifenge(bean.getAmount()));
         if(bean.isSelected()){
-            holder.tv_selected_rv_prizes_dialog.setVisibility(View.VISIBLE);
+            holder.rl_package_scratch_dialog.setBackgroundResource(R.drawable.bg_selected_package_scratch_dialog);
             holder.tv_number_rv_prizes_dialog.setTextColor(mContext.getResources().getColor(R.color.colorRed_900));
             holder.tv_amount_rv_prizes_dialog.setTextColor(mContext.getResources().getColor(R.color.colorRed_900));
         }else{
-            holder.tv_selected_rv_prizes_dialog.setVisibility(View.GONE);
+            holder.rl_package_scratch_dialog.setBackgroundResource(R.drawable.bg_normal_package_scratch_dialog);
             holder.tv_number_rv_prizes_dialog.setTextColor(mContext.getResources().getColor(R.color.colorBlack_33));
             holder.tv_amount_rv_prizes_dialog.setTextColor(mContext.getResources().getColor(R.color.colorBlack_33));
         }
@@ -66,12 +67,13 @@ public class PackageRVAdapter_Scratch_Prizes_Dialog extends RecyclerView.Adapter
     }
 
     class MyHolder extends RecyclerView.ViewHolder{
-        TextView tv_number_rv_prizes_dialog,tv_amount_rv_prizes_dialog,tv_selected_rv_prizes_dialog;
+        RelativeLayout rl_package_scratch_dialog;
+        TextView tv_number_rv_prizes_dialog,tv_amount_rv_prizes_dialog;
         public MyHolder(View itemView) {
             super(itemView);
             tv_number_rv_prizes_dialog = itemView.findViewById(R.id.tv_number_rv_prizes_dialog);
             tv_amount_rv_prizes_dialog = itemView.findViewById(R.id.tv_amount_rv_prizes_dialog);
-            tv_selected_rv_prizes_dialog = itemView.findViewById(R.id.tv_selected_rv_prizes_dialog);
+            rl_package_scratch_dialog = itemView.findViewById(R.id.rl_package_scratch_dialog);
         }
     }
 
