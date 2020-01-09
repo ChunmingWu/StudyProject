@@ -11,49 +11,14 @@
     <application
         android:name="com.adminstrator.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/p7"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/p7"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
 
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
-        <activity android:name=".PxActivity">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
-        <activity android:name=".LoadFileActivity">
-
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
-        <activity android:name=".LoadAndUnzipFileActivity">
-          <!--  <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-        <activity android:name=".WaterFallActivity">
+        <!-- 刮奖效果Demo -->
+        <activity android:name=".activity.ScratchActivity">
            <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,9 +26,59 @@
             </intent-filter>-->
         </activity>
 
-        <activity android:name=".gaugaule.GuaGuaKaHomeActivity"
-            android:theme="@style/activity_theme"
+        <!-- 使用Px设置宽高、leftMargin、topMargin，并做缩放 -->
+        <activity android:name=".activity.PxActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <!-- 下载文件、解压文件、从解压后的文件中获取图片 -->
+        <activity android:name=".activity.LoadAndUnzipFileActivity">
+
+            <!--
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+            -->
+        </activity>
+
+        <!-- RecyclerView实现瀑布流、下拉刷新和上拉加载 -->
+        <activity android:name=".activity.WaterFallActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <!-- 项目Demo -->
+        <activity
+            android:name=".gaugaule.activity.GuaGuaKaHomeActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/activity_theme">
+
+            <!--
+               <intent-filter>
+                   <action android:name="android.intent.action.MAIN" />
+
+                   <category android:name="android.intent.category.LAUNCHER" />
+               </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_theme"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,7 +86,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.adminstrator.guaguakaapplication.WaterFallActivity">
+    tools:context="com.adminstrator.guaguakaapplication.activity.WaterFallActivity">
 
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout

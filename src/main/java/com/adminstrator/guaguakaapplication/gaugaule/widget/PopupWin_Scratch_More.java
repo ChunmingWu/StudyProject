@@ -8,7 +8,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.adminstrator.guaguakaapplication.R;
-import com.adminstrator.guaguakaapplication.Util;
+import com.adminstrator.guaguakaapplication.util.Util;
 
 /**
  * Created by Administrator on 2019/8/16.

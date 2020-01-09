@@ -51,7 +51,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="left|center_vertical"
-            android:text="刮奖进度：KHR 4,000/1,000"
+            android:text="刮奖进度：$ 4,000/1,000"
             android:textColor="@color/colorRed_509"
             android:textSize="14sp" />
 

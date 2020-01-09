@@ -1,9 +1,7 @@
 package com.adminstrator.guaguakaapplication.gaugaule.fragment;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.graphics.Matrix;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -12,21 +10,19 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.adminstrator.guaguakaapplication.DemoAdapter;
+import com.adminstrator.guaguakaapplication.gaugaule.adapter.DemoAdapter;
 import com.adminstrator.guaguakaapplication.R;
-import com.adminstrator.guaguakaapplication.Util;
+import com.adminstrator.guaguakaapplication.util.Util;
 import com.adminstrator.guaguakaapplication.gaugaule.ExStaggeredGridLayoutManager;
 import com.adminstrator.guaguakaapplication.gaugaule.inter.OnFragmentInteractionListener;
 import com.adminstrator.guaguakaapplication.gaugaule.widget.FestivalGiftDialog;
@@ -41,7 +37,6 @@ import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 /**
  * 刮刮乐首页
@@ -79,7 +74,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         iv_grandma_home = view.findViewById(R.id.iv_grandma_home);
         iv_grandma_home.setScaleType(ImageView.ScaleType.MATRIX);
         Matrix matrix = new Matrix();
-//        matrix.setScale(0.8f,0.8f);
         matrix.setTranslate(10,0);
         iv_grandma_home.setImageMatrix(matrix);
         Animation rotate = AnimationUtils.loadAnimation(getContext(),R.anim.rotate_anim_grandma);
@@ -174,7 +168,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 },2000);
             }
         });
-        refreshlayout_home.setEnableLoadMore(false);
+        refreshlayout_home.setEnableLoadMore(true);
         refreshlayout_home.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {

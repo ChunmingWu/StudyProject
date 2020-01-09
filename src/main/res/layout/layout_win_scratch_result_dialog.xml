@@ -60,13 +60,13 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_khr_win_scratch_result"
+            android:id="@+id/tv_$_win_scratch_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_marginTopPercent="70%"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="KHR"
+            android:text="$"
             android:textColor="#FF0101"
             android:textSize="14sp" />
 

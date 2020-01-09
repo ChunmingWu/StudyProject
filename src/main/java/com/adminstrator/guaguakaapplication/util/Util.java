@@ -1,4 +1,4 @@
-package com.adminstrator.guaguakaapplication;
+package com.adminstrator.guaguakaapplication.util;
 
 import android.app.Activity;
 import android.content.Context;
@@ -52,29 +52,7 @@ public class Util {
         return format.format(time);
     }
 
-    public static void hideSoftKeyBoard(Context context, View view) {
-        InputMethodManager im = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        im.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-    }
 
-    public static void showSoftKeyBoard(Context context, EditText view) {
-        InputMethodManager im = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        //强制显示的话，点击屏幕空白处，隐藏软键盘的操作不生效
-//        im.showSoftInput(view, InputMethodManager.SHOW_FORCED);
-        im.showSoftInput(view, 0);
-    }
-
-
-    public static int sp2px(Context context, float spValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return (int) (spValue * fontScale + 0.5f);
-    }
-
-    public static float px2sp(Context context, float pxValue) {
-        float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        float sp = pxValue / fontScale + 0.5f;
-        return sp;
-    }
 
     public static int dp2px(Context context, float dpVal) {
         if(null == context){

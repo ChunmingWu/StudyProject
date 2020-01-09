@@ -1,19 +1,15 @@
 package com.adminstrator.guaguakaapplication.gaugaule;
 
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.adminstrator.guaguakaapplication.Util;
-
 /**
- * @author Jack Tony
- * @brief 不规则排列（类似于瀑布流）的布局管理器
- * @date 2015/4/6
+
+不规则排列（类似于瀑布流）的布局管理器
+
  */
 public class ExStaggeredGridLayoutManager extends StaggeredGridLayoutManager {
 

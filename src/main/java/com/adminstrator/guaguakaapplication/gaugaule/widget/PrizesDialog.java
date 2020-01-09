@@ -20,7 +20,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.adminstrator.guaguakaapplication.R;
-import com.adminstrator.guaguakaapplication.Util;
+import com.adminstrator.guaguakaapplication.util.Util;
 import com.adminstrator.guaguakaapplication.gaugaule.adapter.PackageRVAdapter_Scratch_Prizes_Dialog;
 import com.adminstrator.guaguakaapplication.gaugaule.bean.ScratchPrizesDialogPackageBean;
 
@@ -202,7 +202,7 @@ public class PrizesDialog extends DialogFragment {
         layoutParams2.addRule(RelativeLayout.CENTER_HORIZONTAL);
         layoutParams2.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         tv2.setLayoutParams(layoutParams2);
-        tv2.setText("KHR " + Util.qianweifenge(amount));
+        tv2.setText("$ " + Util.qianweifenge(amount));
         tv2.setTextColor(mContext.getResources().getColor(R.color.colorBlack_33));
         tv2.setTextSize(10);
         tv2.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.TOP);

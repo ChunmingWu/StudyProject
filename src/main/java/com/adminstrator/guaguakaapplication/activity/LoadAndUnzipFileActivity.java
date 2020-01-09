@@ -1,4 +1,4 @@
-package com.adminstrator.guaguakaapplication;
+package com.adminstrator.guaguakaapplication.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.adminstrator.guaguakaapplication.R;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadSampleListener;
 import com.liulishuo.filedownloader.FileDownloader;
@@ -33,7 +34,9 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-
+/**
+ * 一个完整的下载文件、解压文件、从解压后的文件中获取图片进行展示的Demo
+ * */
 public class LoadAndUnzipFileActivity extends AppCompatActivity {
 
     private String TAG = getClass().getSimpleName();

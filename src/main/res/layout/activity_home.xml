@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="20dp"
+    tools:context="com.adminstrator.guaguakaapplication.activity.HomeActivity">
+
+    <TextView
+        android:id="@+id/tv_scratch_demo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="刮奖效果Demo"
+        android:background="@color/colorYellow_36"
+        android:layout_marginTop="60dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_water_fall_demo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="RecyclerView实现瀑布流、下拉刷新和上拉加载"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorYellow_36"
+        />
+
+    <TextView
+        android:id="@+id/tv_file_demo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="下载文件、解压文件、从解压后的文件中获取图片"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorYellow_36"
+        />
+
+    <TextView
+        android:id="@+id/tv_px_demo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="使用Px设置宽高间距，并做缩放"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorYellow_36"
+        />
+
+    <TextView
+        android:id="@+id/tv_my_project_demo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="My project demo"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorYellow_36"
+        />
+
+
+</LinearLayout>

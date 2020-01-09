@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.adminstrator.guaguakaapplication.R;
-import com.adminstrator.guaguakaapplication.Util;
+import com.adminstrator.guaguakaapplication.util.Util;
 
 import java.util.List;
 

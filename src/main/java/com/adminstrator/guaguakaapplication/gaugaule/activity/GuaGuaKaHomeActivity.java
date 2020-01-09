@@ -1,4 +1,4 @@
-package com.adminstrator.guaguakaapplication.gaugaule;
+package com.adminstrator.guaguakaapplication.gaugaule.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -8,11 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
 import com.adminstrator.guaguakaapplication.R;
-import com.adminstrator.guaguakaapplication.Util;
+import com.adminstrator.guaguakaapplication.util.Util;
 import com.adminstrator.guaguakaapplication.gaugaule.fragment.HomeFragment;
 import com.adminstrator.guaguakaapplication.gaugaule.inter.OnFragmentInteractionListener;
 import com.gyf.immersionbar.ImmersionBar;
-
+/**
+ * 我的项目Demo。
+ * */
 public class GuaGuaKaHomeActivity extends AppCompatActivity implements OnFragmentInteractionListener{
 
     private LinearLayout root_home;

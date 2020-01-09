@@ -53,7 +53,7 @@ public class FestivalGiftDialog extends DialogFragment {
 
         tv_content_festival_gift_dialog.setText("新春大礼包包含6张刮刮乐商品。\n" +
                 "\n" +
-                "Dare Or Not (2张) KHR4,000*2、Add Friend (2张) KHR 4,000*2、Dream (2张) KHR 4,000*2。\"\n");
+                "Dare Or Not (2张) $4,000*2、Add Friend (2张) $ 4,000*2、Dream (2张) $ 4,000*2。\"\n");
         iv_cha_festival_gift_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

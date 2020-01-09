@@ -1,4 +1,4 @@
-package com.adminstrator.guaguakaapplication;
+package com.adminstrator.guaguakaapplication.activity;
 
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+
+import com.adminstrator.guaguakaapplication.R;
+import com.adminstrator.guaguakaapplication.gaugaule.adapter.DemoAdapter;
 import com.adminstrator.guaguakaapplication.widget.StaggeredDividerItemDecoration;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -13,7 +16,9 @@ import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
-
+/**
+ * RecyclerView实现瀑布流、下拉刷新和上拉加载
+ * */
 public class WaterFallActivity extends AppCompatActivity {
 
     private ArrayList<Integer> imageIds = new ArrayList<>();
@@ -77,6 +82,7 @@ public class WaterFallActivity extends AppCompatActivity {
             }
         });
 
+        refreshlayout.setEnableLoadMore(true);
         refreshlayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull final RefreshLayout refreshLayout) {

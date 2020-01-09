@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true"
     android:orientation="vertical"
-    tools:context="com.adminstrator.guaguakaapplication.WaterFallActivity">
+    tools:context="com.adminstrator.guaguakaapplication.activity.WaterFallActivity">
 
     <FrameLayout
         android:id="@+id/fl_scratch_home"

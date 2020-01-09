@@ -64,7 +64,7 @@ public class MyRecord_ScratchFragment extends Fragment implements View.OnClickLi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_scratch_card, container, false);
+        view = inflater.inflate(R.layout.fragment_my_record__scratch, container, false);
         initViews();
         return view;
     }

@@ -102,7 +102,7 @@ public class ScratchCardFragment extends Fragment implements View.OnClickListene
                 break;
             case R.id.tv_claim_payout_scratch_card:
                 if(i == 0){
-                    createScratchView(R.drawable.p3);
+                    createScratchView(R.drawable.hps_pre);
                 }else if(i == 1){
                     rl_scratch_card.removeAllViews();
                     createScratchView(R.drawable.p6);
@@ -131,9 +131,9 @@ public class ScratchCardFragment extends Fragment implements View.OnClickListene
     }
 
     private void createScratchView(int resId_GuaGuaKaView) {
-        int size = 500;
+        int size = 900;
         TextView textView = new TextView(getContext());
-        textView.setBackgroundResource(R.drawable.p1);
+        textView.setBackgroundResource(R.drawable.hps_open);
         RelativeLayout.LayoutParams params_tv = new RelativeLayout.LayoutParams(size,size);
         params_tv.addRule(RelativeLayout.CENTER_IN_PARENT);
         textView.setLayoutParams(params_tv);

@@ -4,12 +4,11 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.adminstrator.guaguakaapplication.R;
-import com.adminstrator.guaguakaapplication.Util;
+import com.adminstrator.guaguakaapplication.util.Util;
 import com.adminstrator.guaguakaapplication.gaugaule.bean.ScratchPrizesDialogPackageBean;
 
 import java.util.List;
@@ -41,7 +40,7 @@ public class PackageRVAdapter_Scratch_Prizes_Dialog extends RecyclerView.Adapter
         holder.itemView.setLayoutParams(params);
         ScratchPrizesDialogPackageBean bean = datas.get(position);
         holder.tv_number_rv_prizes_dialog.setText("buy " + bean.getBuyNumber() + " free " + bean.getFreeNumber());
-        holder.tv_amount_rv_prizes_dialog.setText("KHR " + Util.qianweifenge(bean.getAmount()));
+        holder.tv_amount_rv_prizes_dialog.setText("$ " + Util.qianweifenge(bean.getAmount()));
         if(bean.isSelected()){
             holder.rl_package_scratch_dialog.setBackgroundResource(R.drawable.bg_selected_package_scratch_dialog);
             holder.tv_number_rv_prizes_dialog.setTextColor(mContext.getResources().getColor(R.color.colorRed_900));

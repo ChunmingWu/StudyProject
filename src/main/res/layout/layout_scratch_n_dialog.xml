@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|bottom"
-            android:text="KHR 4,000"
+            android:text="$ 4,000"
             android:textColor="@color/colorWhite"
             android:textSize="24sp" />
 
@@ -128,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="KHR 2,000"
+                android:text="$ 2,000"
                 android:textColor="#FFCFBF"
                 android:layout_centerVertical="true"
                 android:textSize="18sp" />

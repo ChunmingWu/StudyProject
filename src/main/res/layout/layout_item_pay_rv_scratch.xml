@@ -87,7 +87,7 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp"
                 android:gravity="left|center_vertical"
-                android:text="KHR 12,000"
+                android:text="$ 12,000"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="15sp"

@@ -19,7 +19,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.adminstrator.guaguakaapplication.R;
-import com.adminstrator.guaguakaapplication.Util;
+import com.adminstrator.guaguakaapplication.util.Util;
 
 /**
  * Created by Administrator on 2019/7/26.
@@ -95,8 +95,8 @@ public class GuaGuaKaView extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.GuaGuaKaView);
         layerDrawable = typedArray.getDrawable(R.styleable.GuaGuaKaView_layerDrawable);
 
-        coinWidth = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinWidth, Util.dp2px(context, 148));
-        coinHeight = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinHeight, Util.dp2px(context, 129));
+        coinWidth = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinWidth, Util.dp2px(context, 106));
+        coinHeight = typedArray.getDimensionPixelOffset(R.styleable.GuaGuaKaView_coinHeight, Util.dp2px(context, 92));
         coinDrawable = typedArray.getDrawable(R.styleable.GuaGuaKaView_coinDrawable);
     }
 

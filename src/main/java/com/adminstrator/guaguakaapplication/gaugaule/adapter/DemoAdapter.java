@@ -1,18 +1,15 @@
-package com.adminstrator.guaguakaapplication;
+package com.adminstrator.guaguakaapplication.gaugaule.adapter;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
+import com.adminstrator.guaguakaapplication.R;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by Administrator on 2019/7/31.
